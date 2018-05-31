@@ -1,8 +1,13 @@
 <div class="card">
 
   <!--Card image-->
-  <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap">
-
+  <img class="img-fluid" src="{{imageUrl}}" alt="Card image cap">
+  <!-- OF Kan uiteraard ook met property binding -->
+  <!-- <img class="img-fluid" [src]="imageUrl" alt="Card image cap"> -->
+  
+  <select class="form-control" [(ngModel)]="imageNr">
+    <option *ngFor="let i of images" value="{{i}}">Image {{i}}</option>
+  </select>
   <!--Card content-->
   <div class="card-body">
     <!--Title-->

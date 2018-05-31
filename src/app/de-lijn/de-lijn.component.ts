@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IVertrekResult, DeLijnService } from '../services/delijn.service';
 
 @Component({
   selector: 'app-de-lijn',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeLijnComponent implements OnInit {
 
-  constructor() { }
+  vertrekken : IVertrekResult;
+
+  constructor(private _svc : DeLijnService) { }
 
   ngOnInit() {
+    this._svc.getVertrekken()
+            .subscribe(result => this.vertrekken = result);
   }
-
 }
