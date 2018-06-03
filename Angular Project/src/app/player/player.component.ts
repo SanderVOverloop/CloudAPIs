@@ -11,15 +11,19 @@ export class PlayerComponent implements OnInit {
 
   players : IPlayer;
   name : string = "Mike";
+  page : number = 0;
+
+  //Bij ingeven naam krijg je: Cannot read property 'getPlayers' of undefined
 
   constructor(private _svc : RocketLeagueService) { }
 
   ngOnInit() {
-    this.ChangeName();
+    this._svc.getPlayers(this.name, this.pageNr)
+            .subscribe(result => this.players = result);
   }
 
   ChangeName(){
-    this._svc.getPlayers(this.name)
+    this._svc.getPlayers(this.name, this.pageNr)
             .subscribe(result => this.players = result);
   }
 
@@ -31,6 +35,15 @@ export class PlayerComponent implements OnInit {
     this.name = value;
     //this.ChangeName();
     setTimeout(this.ChangeName, 1000);
+  }
+
+  get pageNr(){
+    return this.page;
+  }
+
+  set pageNr(value:number){
+    this.pageNr = value;
+    setTimeout(this.ChangeName,1000);
   }
 
 }

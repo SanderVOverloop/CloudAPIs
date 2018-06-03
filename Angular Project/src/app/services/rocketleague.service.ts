@@ -29,7 +29,7 @@ export class RocketLeagueService {
         return this._http.get<ITier>(`https://api.rocketleaguestats.com/v1/data/tiers?apikey=${token}`)
     }
 
-    getPlayers(playerName: string = "Mike"): Observable<IPlayer>{
-        return this._http.get<IPlayer>(`https://api.rocketleaguestats.com/v1/search/players?display_name=${playerName}&apikey=${token}`)
+    getPlayers(playerName: string = "Mike", pageNr: number = 0): Observable<IPlayer>{
+        return this._http.get<IPlayer>(`https://api.rocketleaguestats.com/v1/search/players?display_name=${playerName}&page=${pageNr}&apikey=${token}`)
     }
 }
