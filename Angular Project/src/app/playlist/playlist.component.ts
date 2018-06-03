@@ -11,11 +11,21 @@ export class PlaylistComponent implements OnInit {
 
   playlist : IPlaylist;
 
+  id : number = 1;
+
   constructor(private _svc : RocketLeagueService) { }
 
   ngOnInit() {
     this._svc.getPlaylist()
             .subscribe(result => this.playlist = result);
+  }
+
+  get platformId(){
+    return this.id;
+  }
+
+  set platformId(value:number){
+    this.id = value;
   }
 
 }

@@ -1,0 +1,32 @@
+<div class="card">
+  <div style="color: white; width: 90%; margin-left: 5%; margin-top: 2%" >
+      Fill in a Name :
+      <input type="text" class="form-control" [(ngModel)]="playerName">
+  </div>
+  <div class="card-header">Playlist</div>
+  <div class="card-block">
+      <table class="table table-hover" *ngIf="players">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Platform</th>
+              </tr>
+          </thead>
+          <tbody *ngIf="players.length > 2; then multi else single">
+              <ng-template #multi>
+                <tr *ngFor="let player of players" >
+                    <td>{{player.data.displayName}}</td>
+                    <td>{{player.data.platform.name}}</td>
+                </tr>
+              </ng-template>
+
+              <ng-template #sinlge>
+                <tr>
+                    <td>{{players.data.displayName}}</td>
+                    <td>{{players.data.platform.name}}</td>
+                </tr>
+              </ng-template>
+          </tbody>
+      </table>
+  </div>
+</div>

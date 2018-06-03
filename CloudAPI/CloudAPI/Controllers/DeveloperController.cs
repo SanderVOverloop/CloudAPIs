@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CloudAPI.Controllers
 {
-    [Route("api/developes")]
+    [Route("api/developers")]
     [ApiController]
     public class DeveloperController : ControllerBase
     {

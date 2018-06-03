@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url("https://rocketleague.media.zestyio.com/rl_keyart_victory_crate_1920.jpg")
+}
+
+div.col, div.col-sm-3, div.col-sm-9{
+    margin:auto;
+    width: 70%;
+    border : 3px;
+    padding : 10px;
+}
+
+div.card{
+    color: white;
+    background: url("https://i.imgur.com/i9umepr.jpg")
+}
+div.card-header{
+    background: url("https://elevatedrental.com/wp-content/uploads/2017/08/dark-gray-solid.jpg")
+}
+
+input[type=text]{
+    color: white;
+}
+
+input[type=text]:focus{
+    color: white;
+}

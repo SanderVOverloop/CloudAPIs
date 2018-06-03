@@ -12230,11 +12230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\VanOverloopSanderstu\\OneDrive\\Documenten\\Visual Studio 2017\\Projects\\CloudAPI\\CloudAPI\\CloudAPI.csproj",
+      "projectUniqueName": "D:\\Users\\VanOverloopSanderstu\\Documents\\GitHub\\CloudAPIs\\CloudAPI\\CloudAPI\\CloudAPI.csproj",
       "projectName": "CloudAPI",
-      "projectPath": "D:\\Users\\VanOverloopSanderstu\\OneDrive\\Documenten\\Visual Studio 2017\\Projects\\CloudAPI\\CloudAPI\\CloudAPI.csproj",
+      "projectPath": "D:\\Users\\VanOverloopSanderstu\\Documents\\GitHub\\CloudAPIs\\CloudAPI\\CloudAPI\\CloudAPI.csproj",
       "packagesPath": "C:\\Users\\VanOverloopSanderstu\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\VanOverloopSanderstu\\OneDrive\\Documenten\\Visual Studio 2017\\Projects\\CloudAPI\\CloudAPI\\obj\\",
+      "outputPath": "D:\\Users\\VanOverloopSanderstu\\Documents\\GitHub\\CloudAPIs\\CloudAPI\\CloudAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

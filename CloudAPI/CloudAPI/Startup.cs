@@ -50,6 +50,7 @@ namespace CloudAPI
             }
 
             app.UseHttpsRedirection();
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseMvc();
 
             DbInitializer.Initialize(gameContext);

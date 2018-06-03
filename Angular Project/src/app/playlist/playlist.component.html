@@ -1,19 +1,21 @@
 <div class="card" *ngIf="playlist">
+    <div style="color: white; width: 90%; margin-left: 5%; margin-top: 2%" >
+        Please fill in the Platform-ID :
+        <input type="text" class="form-control" [(ngModel)]="platformId">
+    </div>
     <div class="card-header">Playlist</div>
     <div class="card-block">
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Name</th>
                     <th>Population</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let playl of playlist">
-                    <td>{{playl.id}}</td>
-                    <td>{{playl.name}}</td>
-                    <td>{{playl.population.players}}</td>
+                <tr *ngFor="let playl of playlist" >
+                    <td *ngIf="playl.platformId == platformId">{{playl.name}}</td>
+                    <td *ngIf="playl.platformId == platformId">{{playl.population.players}}</td>
                 </tr>
             </tbody>
         </table>

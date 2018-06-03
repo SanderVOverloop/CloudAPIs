@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
-import { IPlatform, ISeason, IPlaylist } from "../services/interface";
+import { IPlatform, ISeason, IPlaylist, ILeaderboard, ITier, IPlayer } from "../services/interface";
 
-var token = "ZSA0KZUK3TMN4OQUEC0GISW0U4HSRE7B"
+var token = "ZSA0KZUK3TMN4OQUEC0GISW0U4HSRE7B";
 
 @Injectable()
 export class RocketLeagueService {
@@ -19,5 +19,17 @@ export class RocketLeagueService {
 
     getPlaylist(): Observable<IPlaylist>{
         return this._http.get<IPlaylist>(`https://api.rocketleaguestats.com/v1/data/playlists?apikey=${token}`);
+    }
+
+    getLeaderboard(leaderId : number = 10): Observable<ILeaderboard>{
+        return this._http.get<ILeaderboard>(`https://api.rocketleaguestats.com/v1/leaderboard/ranked?playlist_id=${leaderId}&apikey=${token}`)
+    }
+
+    getTier(): Observable<ITier>{
+        return this._http.get<ITier>(`https://api.rocketleaguestats.com/v1/data/tiers?apikey=${token}`)
+    }
+
+    getPlayers(playerName: string = "Mike"): Observable<IPlayer>{
+        return this._http.get<IPlayer>(`https://api.rocketleaguestats.com/v1/search/players?display_name=${playerName}&apikey=${token}`)
     }
 }
